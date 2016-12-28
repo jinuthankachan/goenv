@@ -11,3 +11,4 @@
 
 ## Commands
 * `mkgoenv project-name` : creates a go project in the current directory.
+* `rmgoenv project-name` : deletes the project.
