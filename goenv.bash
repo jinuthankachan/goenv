@@ -1,3 +1,8 @@
+lsgoenv(){
+    echo ">>>> GOENV LIST <<<<"
+    ls ~/.goenv/projects/
+}
+
 mkgoenv(){
     if [ -z "$1" ]; then
         echo "no valid project name."
@@ -23,6 +28,7 @@ rmgoenv(){
     if [ -z "$1" ]; then
         echo "no valid project name entered."
         echo "eg.   rmgoenv project-name"
+        lsgoenv
     else
         if [ -f ~/.goenv/projects/$1 ]; then
             source ~/.goenv/projects/$1
