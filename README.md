@@ -14,3 +14,4 @@
 * `rmgoenv project-name` : deletes the project.
 * `goenv project-name`   : load the project and its env.
 * `dropgoenv`            : unset the GOPATH.
+* `lsgoenv`              : list the projects/goenvs.
