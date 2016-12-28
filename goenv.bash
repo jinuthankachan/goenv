@@ -19,7 +19,7 @@ mkgoenv(){
             mkdir -p src
             mkdir -p src/$1
             export GOPATH=$(pwd)
-            cd ..
+            cd src/$1
         fi
     fi
 }
@@ -35,7 +35,6 @@ rmgoenv(){
             echo "Deleting project '$PROJECT_PATH'"
             rm -rf $PROJECT_PATH/
             rm -f ~/.goenv/projects/$1
-            export GOPATH=""
         else
             echo "project '$1' not found."
             lsgoenv
@@ -55,8 +54,12 @@ goenv(){
             export GOPATH=$PROJECT_PATH/
             cd $GOPATH/src
         else
-            echo "project '$1' not found."
+            echo "Project '$1' not found."
             lsgoenv
         fi
     fi
+}
+
+dropgoenv(){
+    export $GOPATH=""
 }
