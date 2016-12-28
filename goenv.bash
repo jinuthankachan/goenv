@@ -3,10 +3,10 @@ mkgoenv(){
         echo "no valid project name."
         echo "eg.   mkgoenv project-name"
     else
-        if [ -f ~/.goenv/projects/$1.cfg ]; then
+        if [ -f ~/.goenv/projects/$1 ]; then
             echo "$1 already exists."
         else
-            echo "PROJECT_PATH='$PWD/$1'" > ~/.goenv/projects/$1.cfg
+            echo "PROJECT_PATH='$PWD/$1'" > ~/.goenv/projects/$1
             echo "Creating project '$1' at '$PWD/'."
             mkdir -p $1 && cd $1
             mkdir -p bin
@@ -24,11 +24,11 @@ rmgoenv(){
         echo "no valid project name entered."
         echo "eg.   rmgoenv project-name"
     else
-        if [ -f ~/.goenv/projects/$1.cfg ]; then
-            source ~/.goenv/projects/$1.cfg
+        if [ -f ~/.goenv/projects/$1 ]; then
+            source ~/.goenv/projects/$1
             echo "Deleting project '$PROJECT_PATH'"
             rm -rf $PROJECT_PATH/
-            rm -f ~/.goenv/projects/$1.cfg
+            rm -f ~/.goenv/projects/$1
             export GOPATH=""
         else
             echo "project '$1' not found."
