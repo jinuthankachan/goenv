@@ -1,4 +1,10 @@
 # goenv
-* different env for each go project.
-* similiar to virtual env for python.
-* commands like virtualenvwrapper.
+* Different env for each go project.
+* Similiar to virtual env for python.
+* Commands like virtualenvwrapper.
+
+## How to install
+* `cd ~`
+* Download the bash file `curl -o .goenv.bash https://raw.githubusercontent.com/jinut2/goenv/master/goenv.bash`
+* Add this line to your .bashrc `source ~/.goenv.bash`.
+* Restart your terminal.
