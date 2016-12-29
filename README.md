@@ -16,3 +16,4 @@
 * `dropgoenv`                            : unset the GOPATH.
 * `lsgoenv`                              : list the projects/goenvs.
 * `addtogoenv project-name project-path` : add exsting project to goenv.
+* `whichgoenv`                           : displays the current gopath.
