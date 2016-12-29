@@ -52,7 +52,7 @@ goenv(){
             source ~/.goenv/projects/$1
             echo "Loading project '$PROJECT_PATH'"
             export GOPATH=$PROJECT_PATH/
-            cd $GOPATH/src
+            cd $GOPATH/
         else
             echo "Project '$1' not found."
             lsgoenv
@@ -61,7 +61,10 @@ goenv(){
 }
 
 dropgoenv(){
-    export $GOPATH=""
+    if ! [ -z $GOPATH ]; then
+        echo "dropping GOPATH: $GOPATH"
+        unset GOPATH
+    fi
 }
 
 addtogoenv(){
@@ -71,5 +74,13 @@ addtogoenv(){
     else
         echo "Adding project '$2' to goenv."
         echo "PROJECT_PATH='$2'" > ~/.goenv/projects/$1
+    fi
+}
+
+whichgoenv(){
+    if [ -z "$GOPATH" ]; then
+        echo "No goenv set."
+    else
+        echo "GOPATH=$GOPATH"
     fi
 }
