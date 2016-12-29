@@ -19,7 +19,12 @@ mkgoenv(){
             mkdir -p src
             mkdir -p src/$1
             export GOPATH=$(pwd)
-            atom src/$1
+            echo "Enter your preferred editor:"
+            read editor
+            if ! [ -z "$editor" ]; then
+                echo "\n EDITOR='$editor'" >> ~/.goenv/projects/$1
+                $editor src/$1
+            fi
         fi
     fi
 }
@@ -50,9 +55,8 @@ goenv(){
     else
         if [ -f ~/.goenv/projects/$1 ]; then
             source ~/.goenv/projects/$1
-            echo "Loading project '$PROJECT_PATH'"
+            echo "Activating goenv for '$PROJECT_PATH'"
             export GOPATH=$PROJECT_PATH/
-            atom $GOPATH/src/$1
         else
             echo "Project '$1' not found."
             lsgoenv
@@ -62,7 +66,7 @@ goenv(){
 
 dropgoenv(){
     if ! [ -z $GOPATH ]; then
-        echo "dropping GOPATH: $GOPATH"
+        echo "Dropping GOPATH: $GOPATH"
         unset GOPATH
     fi
 }
@@ -82,5 +86,12 @@ whichgoenv(){
         echo "No goenv set."
     else
         echo "GOPATH=$GOPATH"
+    fi
+}
+
+opengoenv(){
+    goenv $1
+    if ! [ -z "$1" ] && ! [ -z $EDITOR ]; then
+        $EDITOR $GOPATH/src/$1
     fi
 }
