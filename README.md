@@ -4,7 +4,7 @@
 * Commands like virtualenvwrapper.
 
 ## How to install
-* Download the install file : `curl -o install.bash https://raw.githubusercontent.com/jinut2/goenv/master/install.bash`.
+* Download the install file : `curl -o install.sh https://raw.githubusercontent.com/jinut2/goenv/master/install.sh`.
 * Run it : `source install.sh`.
 * Add this line to your .bashrc or corresponding file : `source ~/.goenv/goenv.bash`.
 * Restart your terminal.
