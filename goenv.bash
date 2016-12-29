@@ -60,7 +60,7 @@ rmgoenv(){
                     ;;
             esac
             rm -f ~/.goenv/projects/$1
-            if [ $GOENV = $1 ]; then
+            if [ $1=$GOENV ]; then
                 unset GOENV
                 unset GOPATH
             fi
@@ -90,7 +90,7 @@ goenv(){
 }
 
 dropgoenv(){
-    if ! [ -z $GOENV]; then
+    if ! [ -z $GOENV ]; then
         echo "Dropping GOENV: '$GOENV'"
         unset GOENV
         unset GOPATH

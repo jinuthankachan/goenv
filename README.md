@@ -22,3 +22,4 @@
 ### Note
 * `echo $EDITOR` to see the default editor, if preferred editor is not specified.
 * The project-name would be the goenv name.
+* Include the whole path while `addtogoenv` for project-path. eg. ~/some/test-project/
