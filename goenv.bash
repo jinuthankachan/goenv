@@ -1,6 +1,6 @@
 lsgoenv(){
-    echo ">>>> GOENV LIST <<<<"
-    ls ~/.goenv/projects/
+    echo "\n >>>> GOENV LIST <<<<"
+    ls -1t ~/.goenv/projects/
 }
 
 mkgoenv(){
@@ -62,4 +62,14 @@ goenv(){
 
 dropgoenv(){
     export $GOPATH=""
+}
+
+addtogoenv(){
+    if [ -z "$1" ] || [ -z "$2" ]; then
+        echo "Enter in given format."
+        echo "eg.   addtogoenv project-name project-path(GOPATH)"
+    else
+        echo "Adding project '$2' to goenv."
+        echo "PROJECT_PATH='$2'" > ~/.goenv/projects/$1
+    fi
 }

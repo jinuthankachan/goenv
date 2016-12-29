@@ -10,8 +10,9 @@
 * Restart your terminal.
 
 ## Commands
-* `mkgoenv project-name` : creates a go project in the current directory.
-* `rmgoenv project-name` : deletes the project.
-* `goenv project-name`   : load the project and its env.
-* `dropgoenv`            : unset the GOPATH.
-* `lsgoenv`              : list the projects/goenvs.
+* `mkgoenv project-name`                 : creates a go project in the current directory.
+* `rmgoenv project-name`                 : deletes the project.
+* `goenv project-name`                   : load the project and its env.
+* `dropgoenv`                            : unset the GOPATH.
+* `lsgoenv`                              : list the projects/goenvs.
+* `addtogoenv project-name project-path` : add exsting project to goenv.
