@@ -19,7 +19,7 @@ mkgoenv(){
             mkdir -p src
             mkdir -p src/$1
             export GOPATH=$(pwd)
-            cd src/$1
+            atom src/$1
         fi
     fi
 }
@@ -52,7 +52,7 @@ goenv(){
             source ~/.goenv/projects/$1
             echo "Loading project '$PROJECT_PATH'"
             export GOPATH=$PROJECT_PATH/
-            cd $GOPATH/
+            atom $GOPATH/src/$1
         else
             echo "Project '$1' not found."
             lsgoenv
