@@ -81,7 +81,7 @@ goenv(){
             source ~/.goenv/projects/$1
             echo "Activating goenv for '$PROJECT_PATH'"
             export GOENV=$1
-            export GOPATH=$PROJECT_PATH/
+            export GOPATH=$PROJECT_PATH
         else
             echo "'$1' not found."
             lsgoenv
@@ -125,10 +125,10 @@ whichgoenv(){
 
 opengoenv(){
     goenv $1
-    if ! [ -z "$1" ]; then
-        cd $GOPATH/src/$1
+    if  [ -f ~/.goenv/projects/$1 ]; then
         if ! [ -z $EDITOR ]; then
-            $EDITOR .
+        	echo "Opening '$GOPATH/src/$1' in $EDITOR."
+            $EDITOR $GOPATH/src/$1
         fi
     fi
 }
