@@ -132,3 +132,5 @@ opengoenv(){
         fi
     fi
 }
+
+export GOENV="default"
