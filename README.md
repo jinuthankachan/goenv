@@ -1,3 +1,5 @@
+[unmaintained]
+
 # goenv
 * Different env for each go project.
 * Similiar to virtual env for python.
